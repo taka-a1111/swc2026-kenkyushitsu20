@@ -1,24 +1,33 @@
 <!DOCTYPE html>
-<!-- BUILD_TAG: swc2026_kenkyushitsu20_ver1.0 / 2026-09-26 -->
+<!-- BUILD_TAG: swc2026_kenkyushitsu20_banner_ver1.0 / 2026-11-24 -->
 <html lang="ja">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3RQE97GE7Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3RQE97GE7Z');
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>研究室ホームページ　会計書類｜サイエンスウェブ株式会社　ＳＷＣ</title>
+<title>研究室ホームページ制作・スタンダードプラン｜サイエンスウェブ株式会社</title>
 <meta name="description" content="研究室ホームページ　スタンダードプランの会計書類。基本見積書・最適見積書・発注書を画面上で作成し、印刷も保存もできます。">
 <meta name="keywords" content="研究室 ホームページ,研究室 サイト制作,大学 研究室 Web,ホームページ制作,見積書 作成,発注書 作成">
 <meta name="author" content="サイエンスウェブ株式会社">
 <meta name="robots" content="index, follow">
 <meta name="format-detection" content="telephone=no">
-<link rel="canonical" href="https://swc2026-kenkyushitsu20.vercel.app/">
+<link rel="canonical" href="https://science-web.co.jp/lab/">
 
 <!-- OGP：SNSやメールで共有されたときの表示 -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="サイエンスウェブ株式会社">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="研究室ホームページ　会計書類｜サイエンスウェブ株式会社　ＳＷＣ">
+<meta property="og:title" content="研究室ホームページ制作・スタンダードプラン｜サイエンスウェブ株式会社">
 <meta property="og:description" content="研究室ホームページ　スタンダードプランの会計書類。基本見積書・最適見積書・発注書を画面上で作成し、印刷も保存もできます。">
-<meta property="og:url" content="https://swc2026-kenkyushitsu20.vercel.app/">
+<meta property="og:url" content="https://science-web.co.jp/lab/">
 <meta name="twitter:card" content="summary_large_image">
 
 <!-- 構造化データ：検索結果でサービス内容と価格を認識させる -->
@@ -32,7 +41,7 @@
   "provider": {
     "@type": "Organization",
     "name": "サイエンスウェブ株式会社",
-    "url": "https://swc2026-kenkyushitsu20.vercel.app/",
+    "url": "https://science-web.co.jp/lab/",
     "foundingDate": "1997-08-07",
     "address": {
       "@type": "PostalAddress",
@@ -461,6 +470,26 @@ dl.info dd{margin:2px 0 0;word-break:break-word;}
 footer{background:var(--navy-d);color:#fff;padding:22px 0;font-size:13px;text-align:center;}
 footer a{color:#cfe3f7;}
 
+/* ============ 追従バー ============ */
+.sticky-cta{
+  position:fixed;left:0;right:0;bottom:0;z-index:90;
+  background:rgba(0,48,95,.97);padding:9px 12px;
+  display:flex;gap:8px;justify-content:center;
+  box-shadow:0 -3px 12px rgba(0,0,0,.22);
+}
+.sticky-cta button{
+  flex:1 1 0;max-width:230px;min-height:46px;border:0;border-radius:7px;cursor:pointer;
+  font-family:inherit;font-size:14.5px;font-weight:900;color:#fff;line-height:1.3;
+}
+.sticky-cta .s1{background:var(--accent);}
+.sticky-cta .s2{background:var(--red);}
+.sticky-cta .s3{background:#fff;color:var(--navy);}
+body{padding-bottom:70px;}
+@media (max-width:480px){ .sticky-cta button{font-size:13px;} }
+
+footer{background:var(--navy-d);color:#fff;padding:22px 0;font-size:13px;text-align:center;}
+footer a{color:#cfe3f7;}
+
 /* ============ モーダル ============ */
 .modal{
   position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.6);
@@ -634,7 +663,7 @@ table.tbl td.num,.doc td.r,.amt{
 }
 
 /* --- 余白のリズム（8の倍数で統一） -------------------------- */
-section{padding:92px 0;}
+section{padding:40px 0;}
 section + section{border-top:1px solid var(--rule-2);}
 #price40,#works{background:var(--wash);}
 #faq,#contact{background:#fff;}
@@ -691,9 +720,16 @@ section + section{border-top:1px solid var(--rule-2);}
 .hero-card .p-pre{font-size:30px;letter-spacing:.02em;}
 .hero-card .p-tax{font-size:12px;letter-spacing:.1em;opacity:.8;margin-top:8px;}
 
-/* 右側「２週間」は控えめに（40万円を主役にするため） */
-.hero-card .hc-right{flex:0 0 auto;padding-left:36px;}
-.hero-card .hc-left{flex:1 1 auto;}
+/* 右側「３週間」は控えめに（40万円を主役にするため） */
+/* 区切り線で左右を均等に分け、それぞれの枠内で中央揃え */
+.hero-card .hc-left{flex:1 1 0;min-width:0;padding-right:32px;text-align:center;}
+.hero-card .hc-right{flex:1 1 0;min-width:0;padding-left:32px;text-align:center;}
+.hero-card .hc-left .p,.hero-card .hc-right .p{justify-content:center;}
+@media(max-width:700px){.hero-card .hc-left,.hero-card .hc-right{flex:0 0 auto;text-align:center;padding-left:0;padding-right:0;width:100%;}
+  .hero-card .hc-left .p,.hero-card .hc-right .p{justify-content:center;}
+  .hero-card .hc-sep{margin:18px 0;}
+  .hero-card .hc-right{padding-top:15px;padding-bottom:0;}}
+
 .hero-card .hc-right .p-num{font-size:46px;}
 .hero-card .hc-right .p-unit{font-size:22px;}
 .hero-card .hc-right .n{font-size:11px;margin-bottom:6px;}
@@ -853,6 +889,28 @@ footer{border-top:0;}
 @media print{
   .doc{zoom:1!important;}  /* 縮小表示は画面のみ。印刷は等倍 */
 }
+
+/* ===== 11月バナー修正：ここから ===== */
+.cbanner{margin:28px auto 0;max-width:780px;border:2px solid var(--navy,#0F62B4);border-radius:8px;background:var(--navy-l,#EAF3FC);padding:18px 22px;color:#000;}
+.cbanner-ttl{font-size:clamp(17px,2.2vw,21px);font-weight:900;color:var(--navy,#0F62B4);margin:0 0 10px;text-align:center;letter-spacing:.06em;}
+.cbanner-grid{display:grid;grid-template-columns:auto auto auto;justify-content:center;align-items:center;column-gap:20px;row-gap:10px;}
+.cb-label{font-size:clamp(15px,2vw,18px);font-weight:800;white-space:nowrap;}
+.cb-tel{font-size:clamp(22px,4.6vw,32px);font-weight:900;line-height:1.3;color:#000;text-decoration:none;white-space:nowrap;letter-spacing:.03em;}
+.cb-hours,.cb-name{font-size:clamp(13.5px,1.6vw,16px);white-space:nowrap;}
+.cb-name{font-weight:700;}
+.cb-mail{display:block;line-height:0;}
+.cb-mail img{height:clamp(20px,2.6vw,26px);width:auto;max-width:100%;}
+@media(max-width:640px){
+  .cbanner{padding:16px 16px;}
+  .cbanner-grid{grid-template-columns:auto minmax(0,1fr);justify-content:start;column-gap:14px;row-gap:2px;}
+  .cb-label{grid-row:span 2;align-self:start;padding-top:4px;}
+  .cb-hours{grid-column:2;margin-bottom:10px;}
+  .cb-mail{grid-column:2;padding-top:6px;}
+  .cb-name{grid-column:2;}
+}
+.cbanner-note{margin:10px 0 0;text-align:center;font-size:clamp(13.5px,1.6vw,15px);font-weight:700;}
+@media print{.cbanner{break-inside:avoid;}}
+/* ===== 11月バナー修正：ここまで ===== */
 </style>
 
 <style>
@@ -870,24 +928,358 @@ footer{border-top:0;}
 .sec-ttl{margin:0 0 12px}
 </style>
 </head>
+
+<!--サイトコンテンツ-->
 <body>
 
 <header>
   <div class="wrap hd">
-    <span class="hd-logo"><b>サイエンスウェブ株式会社　ＳＷＣ</b></span>
+    <a class="hd-logo" href="#top"><img class="hd-logo-img" src="https://science-web.co.jp/lab/swc-logo.png" alt="サイエンスウェブ株式会社"></a>
+    <button class="hd-toggle" id="navToggle" aria-expanded="false">メニュー</button>
+    <nav aria-label="メインメニュー">
+      <ul class="gnav" id="gnav">
+        <li><a href="#top">トップ</a></li>
+        <li><a href="#price40">20万円</a></li>
+        <li><a href="#works">保守管理と運用代行</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">ご相談</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
+<!-- ===== 1画面目：トップ ===== -->
 <main>
-<section class="sec" id="docs">
+<div class="hero" id="top">
   <div class="wrap">
-    <h2 class="sec-ttl">研究室ホームページ　会計書類</h2>
-    <p class="lead">「基本見積書」「最適見積書」「発注書」から、必要な書類を選択して作成できます。<br>画面上で必要事項を入力するだけで書類を作成でき、そのまま印刷・保存が可能です。</p>
-    <div class="doc-btns">
-      <button class="btn-doc b1" data-open="m-basic">基本見積書</button>
-      <button class="btn-doc b2" data-open="m-ref">最適見積書</button>
-      <button class="btn-doc b3" data-open="m-order">発注書</button>
+    <h1>
+      <span class="sub">2007年から研究者に信頼されて、大学・学会・科研費をサポート。</span>
+      <span class="kw">研究室ホームページ制作 2026</span>
+    </h1>
+    <div class="hero-price">
+      <div class="hero-card">
+        <div class="hc-left">
+          <div class="n">スタンダードプラン</div>
+          <div class="p"><span class="p-pre">基本</span><span class="p-num">20</span><span class="p-unit">万円</span></div>
+          <div class="p-tax">ＬＰ10ページ<br>（消費税　含みません）</div>
+        </div>
+        <div class="hc-sep" aria-hidden="true"></div>
+        <div class="hc-right">
+          <div class="n">入稿完了から</div>
+          <div class="p"><span class="p-num">２</span><span class="p-unit">週間</span></div>
+          <div class="p-tax">で公開！</div>
+        </div>
+      </div>
+    </div>          
+    <div class="media-slot" id="mediaSlot">
+      <img src="https://science-web.co.jp/lab/hero-1.jpg" alt="ウェブデザイン" class="on">
+      <img src="https://science-web.co.jp/lab/hero-2.jpg" alt="制作作業の様子">
+      <img src="https://science-web.co.jp/lab/hero-3.jpg" alt="調査の様子">
     </div>
+    <!-- 11月バナー修正：お問合せのバナー（メールアドレスは画像。押すとメールソフトが起動） -->
+    <div class="cbanner" role="group" aria-label="お問合せ">
+      <p class="cbanner-ttl">お問合せは</p>
+      <div class="cbanner-grid">
+        <span class="cb-label">電話</span><a class="cb-tel" href="tel:050-3538-7006">050-3538-7006</a><span class="cb-hours">平日10時〜15時</span>
+        <span class="cb-label">メール</span><a class="cb-mail" href="mailto:web-team@science-web.co.jp"><img src="data:image/png;base64,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" width="427" height="41" alt="web-team@science-web.co.jp"></a><span class="cb-name">担当　福永典子</span>
+      </div>
+      <p class="cbanner-note">開封後6時間以内に返信いたします</p>
+    </div>   
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2 class="sec-ttl">ジャスト20万円！</h2>
+    <ul class="worries">
+      <li><span style="color: #000000;">明確な仕様・単一価格</span></li>
+      <li><span style="color: #000000;">追加請求なし（アドオン可）</span></li>
+      <li><span style="color: #000000;">大学ドメイン／外部サーバー対応</span></li>
+      <li><span style="color: #000000;">SEO設計・導線設計込み</span></li>
+      <li><span style="color: #000000;">CMSで誰でも更新可能</span></li>
+      <li><span style="color: #000000;">公開後も保守契約で安定運用</span></li>
+    </ul>
+
+    <div class="answer-box">
+      <p class="answer-ttl"><span style="color: #ffffff;">入稿完了から２週間にて公開完了！</span></p>
+      <p class="answer-txt"><span style="color: #ffffff;">２週間納品・1年間公開・CMS／スマホ対応／SEO／アクセス解析</span></p>
+    </div>
+
+    <div class="btns two" style="margin-top:26px;">
+      <a class="btn btn-contact" href="mailto:science-mail@science-web.co.jp?subject=%E3%83%A1%E3%83%BC%E3%83%AB%E7%9B%B8%E8%AB%87%E3%81%8A%E7%94%B3%E8%BE%BC%E3%81%BF">メール相談お申込み</a>
+      <a class="btn btn-zoom" href="mailto:zoom-request@science-web.co.jp?subject=Zoom%E7%9B%B8%E8%AB%87%E3%81%8A%E7%94%B3%E8%BE%BC%E3%81%BF&amp;body=%E3%81%94%E5%B8%8C%E6%9C%9B%E6%97%A5%E6%99%82%EF%BC%88%E7%AC%AC3%E5%B8%8C%E6%9C%9B%E3%81%BE%E3%81%A7%EF%BC%89%EF%BC%9A%0D%0A%0D%0A%E3%81%94%E6%89%80%E5%B1%9E%EF%BC%9A%0D%0A%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0D%0A">Zoom相談お申込み<small></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2画面目：制作費用 ===== -->
+<section id="price40" aria-labelledby="sec-price40">
+  <div class="wrap">
+    <h2 class="sec-ttl" id="sec-price40">研究室ホームページを２週間で公開します</h2>
+
+    <div class="plans single">
+      <div class="plan rec">
+        <h3>スタンダードプラン</h3>
+        <div class="price">20<small>万円</small></div>
+        <div class="tax">税別／一式</div>
+        <table class="spec">
+        　<tr><th>ドメイン登録料</th><td><span style="color: #000000;">10,000円／年	本年度３月末まで有効。</span></td></tr>
+        　<tr><th>サーバー利用料</th><td><span style="color: #000000;">70,000円／年	本年度３月末まで有効。</span></td></tr>
+          <tr><th>デザイン</th><td><span style="color: #000000;">テンプレート３点から選択できます。</span></td></tr>
+          <tr><th>CMS制作</th><td><span style="color: #000000;">専門知識がなくても更新できます。</span></td></tr>
+          <tr><th>スマホに最適化</th><td><span style="color: #000000;">レスポンシブ対応です。</span></td></tr>
+          <tr><th>アクセス解析</th><td><span style="color: #000000;">６ヶ月間ご提供します。</span></td></tr>
+          <tr><th>SEO</th><td><span style="color: #000000;">検索エンジン最適化に対応します。</span></td></tr>
+          <tr><th>修正と更新</th><td><span style="color: #000000;">月２件まで無料です。</span></td></tr>
+          <tr><th>Zoom相談</th><td><span style="color: #000000;">月２回まで可能です。</span></td></tr>
+        </table>
+      </div>
+    </div>
+    
+    <div class="basic-link">
+      <span class="bl-name">LP３ページ・ドメイン／サーバー利用料込　　</span>
+      <span class="bl-price">ベーシックプラン</span>
+      <span class="bl-price">5万円　　</span>
+      <a class="bl-btn" href="https://science-web.co.jp/lab.trial/" target="_blank" rel="noopener">詳しくはこちら</a>
+    </div>
+    
+    <div class="addon">
+      <h3 class="box-ttl">アドオンとして追加可能です。</h3>
+      <table class="tbl">
+        <tr><th>オリジナルデザイン</th><td class="num">70,000円</td><td><span style="color: #000000;">初回。新規にて依頼できます</span></td></tr>
+        <tr><th>運用代行の業務契約</th><td class="num">10,000円／月</td><td><span style="color: #000000;">本年度３月末まで有効</span></td></tr>
+        <tr><th>保守管理の業務契約</th><td class="num">10,000円／月</td><td><span style="color: #000000;">本年度３月末まで有効</span></td></tr>
+      </table>
+    </div>
+
+    <div class="freebox">
+      <h3 class="box-ttl">次は含まれません。</h3>
+      <ul class="free">
+        <li><span style="font-size: 1.0rem;">消費税　10％</span><p></p></li>
+      </ul>
+    </div>
+    
+    <!-- 11月バナー修正：お問合せのバナー（メールアドレスは画像。押すとメールソフトが起動） -->
+    <div class="cbanner" role="group" aria-label="お問合せ">
+      <p class="cbanner-ttl">お問合せは</p>
+      <div class="cbanner-grid">
+        <span class="cb-label">電話</span><a class="cb-tel" href="tel:050-3538-7006">050-3538-7006</a><span class="cb-hours">平日10時〜15時</span>
+        <span class="cb-label">メール</span><a class="cb-mail" href="mailto:web-team@science-web.co.jp"><img src="data:image/png;base64,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" width="427" height="41" alt="web-team@science-web.co.jp"></a><span class="cb-name">担当　福永典子</span>
+      </div>
+      <p class="cbanner-note">開封後6時間以内に返信いたします</p>
+    </div>
+
+    <div class="btns" style="margin-top:26px;">
+      <button class="btn btn-quote" data-open="m-basic">基本見積書<br>ダウンロード<small>その場で作成・印刷</small></button>
+      <button class="btn btn-quote2" data-open="m-ref">最適見積書<br>ダウンロード<small>希望項目を含めて計算</small></button>
+      <button class="btn btn-order" data-open="m-order">仕様書・発注書・請書<small>入力してそのまま送信</small></button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 3画面目：保守・運用 ===== -->
+<section id="works" aria-labelledby="sec-works">
+  <div class="wrap">
+    <h2 class="sec-ttl" id="sec-price40">保守管理と運用代行の業務は、<br>スタンダードプランに含みます。</h2>
+  <div class="addon">
+      <h3 class="box-ttl">10,000円／月、一括払い。</h3>
+      <table class="tbl">
+        <tr><th>サーバー・ドメイン管理</th><td><span style="color: #000000;">月1回まで</span></td></tr>
+        <tr><th>ＳＳＬ証明書の更新</th><td><span style="color: #000000;">年1回まで</span></td></tr>
+        <tr><th>ＣＭＳアップデート</th><td><span style="color: #000000;">月２回まで</span></td></tr>
+        <tr><th>サーバーバックアップ</th><td><span style="color: #000000;">月２回まで</span></td></tr>
+        <tr><th>障害対応</th><td><span style="color: #000000;">月２件まで（一次対応＋復旧支援）</span></td></tr>
+        <tr><th>運用とセキュリティ助言</th><td><span style="color: #000000;">月２回まで（各1時間以内）</span></td></tr>
+      </table>
+    </div>
+  <div class="addon">
+      <h3 class="box-ttl">アドオンとして追加可能です。</h3>
+      <table class="tbl">
+        <tr><th>更新・設定作業</th><td class="num">10,000円／時</td><td><span style="color: #000000;">既存機能の修正・調整等</span></td></tr>
+        <tr><th>技術作業</th><td class="num">20,000円／時</td><td><span style="color: #000000;">開発、障害対応、構成変更等</span></td></tr>
+      </table>
+    </div>
+  <div class="freebox">
+      <h3 class="box-ttl">次は含まれません。</h3>
+      <ul class="free">
+        <li><span style="font-size: 1.0rem;">機器購入、機器修理、機器交換、機器設置、機器設定など。</span></li>
+        <li><span style="font-size: 1.0rem;">データ入力、大規模リニューアル、構造変更、コンテンツ制作など。</span></li>
+        <li><span style="font-size: 1.0rem;">ＳＥＯ実施、アクセス解析。</span></li>
+      </ul>
+    </div>
+
+  <div class="addon">
+      <h3 class="box-ttl">10,000円／月、一括払い。</h3>
+      <table class="tbl">
+        <tr><th>掲載と更新</th><td><span style="color: #000000;">研究テーマ、および、概要。<br>研究業績・交流。</span></td></tr>
+        <tr><th>整備</th><td><span style="color: #000000;">教授・メンバー・代表・委員紹介。</span></td></tr>
+        <tr><th>整備</th><td><span style="color: #000000;">お問い合せ情報。</span></td></tr>
+        <tr><th>更新支援</th><td><span style="color: #000000;">ニュース等。<br>募集、管理。<br>アクセス、ほか。</span></td></tr>
+        <tr><th>テキスト修正</th><td><span style="color: #000000;">400字以内。</span></td></tr>
+        <tr><th>画像差替え</th><td><span style="color: #000000;">２点以内　写真・イラスト・pdfファイルを含む。</span></td></tr>
+        <tr><th>リンク修正</th><td><span style="color: #000000;">３点以内。</span></td></tr>
+      </table>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ===== 4画面目：FAQ ===== -->
+<section id="faq" aria-labelledby="sec-faq">
+  <div class="wrap">
+    <h2 class="sec-ttl" id="sec-faq">「制作と公開で終わり」ではありません</h2>
+    
+    <h3 class="sub-ttl">選ばれる理由</h3>
+    <ul class="points">
+      <li>研究用途に特化<span>一般企業向けとは別設計です。</span></li>
+      <li>担当者の交代も<span>運用できるCMS構造です。</span></li>
+      <li>大学ドメイン外も<span>外部サーバーに完全対応できます。</span></li>
+      <li>SEO／アクセス解析<span>初期設計に組込みます。</span></li>
+    </ul>
+
+    <h3 class="sub-ttl">よくある失敗</h3>
+    <ul class="worries">
+      <li><span style="color: #000000;">学生任せだと、更新が滞りがち。</span></li>
+      <li><span style="color: #000000;">担当者の交代後、誰も触れなくなる。</span></li>
+      <li><span style="color: #000000;">外注先の選定が面倒。</span></li>
+      <li><span style="color: #000000;">公開後、自分たちで運用できない設計で納品される可能性も。</span></li>
+    </ul>
+
+    <h3 class="sub-ttl">解決する方法</h3>
+    <ul class="worries">
+      <li><span style="color: #000000;">誰でも引き継げるように制作します。</span></li>
+      <li><span style="color: #000000;">更新が止まらない運用を設計します。</span></li>
+      <li><span style="color: #000000;">入稿から２週間以内に公開します。</span></li>
+      <li><span style="color: #000000;">公開後の修正と更新は月２件まで無料です。</span></li>
+    </ul>
+
+    <h3 class="sub-ttl">よくあるご質問</h3>
+    <dl class="qa">
+      <dt>どのくらいで公開できますか？</dt>
+      <dd>入稿から２週間以内に公開します。</dd>
+      <dt>担当者が交代しても更新できますか？</dt>
+      <dd>CMSで誰でも更新でき、担当者が交代しても運用できる構造です。</dd>
+      <dt>大学ドメインや外部サーバーにも対応できますか？</dt>
+      <dd>大学ドメイン／外部サーバーに対応します。</dd>
+      <dt>公開後の修正や更新はできますか？</dt>
+      <dd>公開後の修正と更新は月２件まで無料です。保守管理・運用代行は別途契約できます。</dd>
+    </dl>
+    <br>
+    <h2 class="sec-ttl">実績について</h2>
+        <h3 class="sub-ttl">学会</h3>
+        <ul class="recent">
+            <li>応用物理学会</li>
+            <li>国際会計研究学会</li>
+            <li>静電気学会</li>
+            <li>畜産学会</li>
+            <li>中部森林学会</li>
+            <li>日本分光学会、ほか</li>
+        </ul>
+        <h3 class="sub-ttl">国立研究開発法人</h3>
+        <ul class="recent">
+            <li>JAXA、ほか</li>
+        </ul>
+        <h3 class="sub-ttl">国立大学法人</h3>
+        <ul class="recent">
+            <li>東京大学</li>
+            <li>京都大学</li>
+            <li>大阪大学</li>
+            <li>東北大学</li>
+            <li>名古屋大学</li>
+            <li>北海道大学、ほか</li>
+        </ul>
+           
+    <div class="btns two" style="margin-top:26px;">
+      <a class="btn btn-contact" href="mailto:science-mail@science-web.co.jp?subject=%E3%83%A1%E3%83%BC%E3%83%AB%E7%9B%B8%E8%AB%87%E3%81%8A%E7%94%B3%E8%BE%BC%E3%81%BF">メール相談お申込み</a>
+      <a class="btn btn-zoom" href="mailto:zoom-request@science-web.co.jp?subject=Zoom%E7%9B%B8%E8%AB%87%E3%81%8A%E7%94%B3%E8%BE%BC%E3%81%BF&amp;body=%E3%81%94%E5%B8%8C%E6%9C%9B%E6%97%A5%E6%99%82%EF%BC%88%E7%AC%AC3%E5%B8%8C%E6%9C%9B%E3%81%BE%E3%81%A7%EF%BC%89%EF%BC%9A%0D%0A%0D%0A%E3%81%94%E6%89%80%E5%B1%9E%EF%BC%9A%0D%0A%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0D%0A">Zoom相談お申込み<small></a>
+    </div>
+</section>
+
+<!-- ===== 5画面目：ご相談 ===== -->
+<section id="contact" aria-labelledby="sec-contact">
+  <div class="wrap">
+    <h2 class="sec-ttl" id="sec-contact">まずは、ご相談内容をお聞かせください</h2>
+
+    <div class="btns" style="margin-top:26px;">
+      <button class="btn btn-quote" data-open="m-basic">基本見積書<br>ダウンロード<small>その場で作成・印刷</small></button>
+      <button class="btn btn-quote2" data-open="m-ref">最適見積書<br>ダウンロード<small>希望項目を含めて計算</small></button>
+      <button class="btn btn-order" data-open="m-order">仕様書・発注書・請書<small>入力してそのまま送信</small></button>
+    </div>
+    
+    <div class="company">
+      <h3 class="box-ttl">会社概要</h3>
+      <table class="tbl">
+        <tr><th style="width:26%">会社名</th><td>サイエンスウェブ株式会社</td></tr>
+        <tr><th>所在地</th><td>305-0051　茨城県つくば市二の宮１ー21ー11</td></tr>
+        <tr><th>創業</th><td>2007年8月10日　科学技術の街　茨城県つくば市にて創業</td></tr>
+        <tr><th>代表取締役</th><td>丹野篤美</td></tr>
+      </table>
+      <p class="ceo-txt">1975年、茨城県ひたちなか市生まれ。大学で物理学を専攻。ソフトウェア会社（HITACHI系）に勤務し、IT専門知識と経験を積む。Webサイト制作やWebシステム開発と運営管理を多数推進しました。研究者の事業を幅広くサポートしています。</p>
+    </div>
+    
+    <h3 class="sub-ttl">業務内容</h3>
+    <table class="tbl-clear">
+      <!-- 制作 Webサイト -->
+      <tr>
+        <th rowspan="4" style="width: 25%;">制作　Webサイト</th>
+        <td style="width: 30%;">・研究室  ５万円</td>
+        <td style="width: 45%; word-break: break-all;"><a href="https://science-web.co.jp/lab.trial/" target="_blank" rel="noopener">https://science-web.co.jp/lab.trial/</a></td>
+      </tr>
+      <tr>
+        <td>・研究室  20万円</td>
+        <td style="word-break: break-all;"><a href="https://science-web.co.jp/lab/" target="_blank" rel="noopener">https://science-web.co.jp/lab/</a></td>
+      </tr>
+      <tr>
+        <td>・学会   20万円</td>
+        <td style="word-break: break-all;"><a href="https://science-web.co.jp/gakkai/" target="_blank" rel="noopener">https://science-web.co.jp/gakkai/</a></td>
+      </tr>
+      <tr>
+        <td>・研究費  20万円</td>
+        <td style="word-break: break-all;"><a href="https://science-web.co.jp/science" target="_blank" rel="noopener">https://science-web.co.jp/science</a></td>
+      </tr>
+
+      <!-- 開発 Webアプリ -->
+      <tr>
+        <th rowspan="5" style="padding-top: 24px;">開発　Webアプリ</th>
+        <td style="padding-top: 24px;">・論文投稿 ５万円</td>
+        <td style="padding-top: 24px; word-break: break-all;"><a href="https://science-web.tokyo/ronbun.trial/" target="_blank" rel="noopener">https://science-web.tokyo/ronbun.trial/</a></td>
+      </tr>
+      <tr>
+        <td>・論文投稿 20万円</td>
+        <td style="word-break: break-all;"><a href="https://science-web.tokyo/ronbun/" target="_blank" rel="noopener">https://science-web.tokyo/ronbun/</a></td>
+      </tr>
+      <tr>
+        <td>・紀要管理 30万円</td>
+        <td style="word-break: break-all;"><a href="https://science-web.tokyo/bulletin/" target="_blank" rel="noopener">https://science-web.tokyo/bulletin/</a></td>
+      </tr>
+      <tr>
+        <td>・役員選挙 20万円</td>
+        <td style="word-break: break-all;"><a href="https://science-web.tokyo/senkyo/" target="_blank" rel="noopener">https://science-web.tokyo/senkyo/</a></td>
+      </tr>
+      <tr>
+        <td>・学会事務 20万円</td>
+        <td style="word-break: break-all;"><a href="https://science-web.tokyo/jimu-system/" target="_blank" rel="noopener">https://science-web.tokyo/jimu-system/</a></td>
+      </tr>
+
+      <!-- 開発 会議開催サポート -->
+      <tr>
+        <th rowspan="2" style="padding-top: 24px;">開発　会議開催サポート</th>
+        <td style="padding-top: 24px;">・フォーム 30万円</td>
+        <td style="padding-top: 24px; word-break: break-all;"><a href="https://science-web.online/30venue" target="_blank" rel="noopener">https://science-web.online/30venue</a></td>
+      </tr>
+      <tr>
+        <td>・開催案内 40万円</td>
+        <td style="word-break: break-all;"><a href="https://science-web.online/40venue" target="_blank" rel="noopener">https://science-web.online/40venue</a></td>
+      </tr>
+    </table>
+    
+    <div class="btns two" style="margin-top:26px;">
+      <a class="btn btn-contact" href="mailto:science-mail@science-web.co.jp?subject=%E3%83%A1%E3%83%BC%E3%83%AB%E7%9B%B8%E8%AB%87%E3%81%8A%E7%94%B3%E8%BE%BC%E3%81%BF">メール相談お申込み</a>
+      <a class="btn btn-zoom" href="mailto:zoom-request@science-web.co.jp?subject=Zoom%E7%9B%B8%E8%AB%87%E3%81%8A%E7%94%B3%E8%BE%BC%E3%81%BF&amp;body=%E3%81%94%E5%B8%8C%E6%9C%9B%E6%97%A5%E6%99%82%EF%BC%88%E7%AC%AC3%E5%B8%8C%E6%9C%9B%E3%81%BE%E3%81%A7%EF%BC%89%EF%BC%9A%0D%0A%0D%0A%E3%81%94%E6%89%80%E5%B1%9E%EF%BC%9A%0D%0A%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0D%0A">Zoom相談お申込み<small></a>
+    </div>
+  </div>
+    
   </div>
 </section>
 </main>
@@ -895,11 +1287,18 @@ footer{border-top:0;}
 <footer>
   <div class="wrap">
     <p class="ft-brand">サイエンスウェブ株式会社　ＳＷＣ</p>
-    <p class="ft-line">電話　050-3538-7006（平日10時〜16時）</p>
-    <p class="ft-line">メール　science-mail@science-web.co.jp　ひろこ</p>
-    <p class="ft-copy">＠SWC　Science Web Coop.</p>
+    <p class="ft-line">業務　<a href="https://science-web.co.jp/lab/" target="_blank" rel="noopener">https://science-web.co.jp/lab/</a></p>
+    <p class="ft-line">電話　<a href="tel:050-3538-7006">050-3538-7006</a>（平日10時〜15時）</p>
+    <p class="ft-line">メール　<a href="mailto:web-mail@science-web.co.jp?subject=%E3%83%A1%E3%83%BC%E3%83%AB%E7%9B%B8%E8%AB%87%E3%81%8A%E7%94%B3%E8%BE%BC%E3%81%BF">web-mail@science-web.co.jp</a>　福永典子</p>
+    <p class="ft-copy">＠SWC　Science Web Corp.</p>
   </div>
 </footer>
+
+<div class="sticky-cta no-print" role="navigation" aria-label="書類の作成">
+  <button class="s1" data-open="m-basic">基本見積書</button>
+  <button class="s3" data-open="m-ref">最適見積書</button>
+  <button class="s2" data-open="m-order">発注書</button>
+</div>
 
 <!-- ============ モーダル：基本見積書 ============ -->
 <div class="modal" id="m-basic">
